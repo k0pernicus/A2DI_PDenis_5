@@ -23,20 +23,8 @@ def power_method(matrix):
 
     return q_0, iterations
 
-def compute_stochastic_matrix(matrix):
-    """
-
-    """
-
-    for i, line in enumerate(matrix):
-        s = sum(line)
-        for j, element in enumerate(line):
-            matrix[i][j] /= s
-
-    return matrix
-
 def main():
-    
+
     A = np.array([[4.,5.],[6.,5.]])
     B = np.array([[-4.,10.],[7.,5.]])
 
