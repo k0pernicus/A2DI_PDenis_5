@@ -33,8 +33,16 @@ def main():
     qA_0, iterations_A = power_method(A)
     qB_0, iterations_B = power_method(B)
 
+    print("Vecteurs propres dominants :")
     print("qA: {} - {}".format(qA_0, iterations_A))
     print("qB: {} - {}".format(qB_0, iterations_B))
+
+    print("------")
+    print("Valeurs propres associées : ")
+    vA, _ = np.linalg.eig(A)
+    vB, _ = np.linalg.eig(B)
+    print("vA: {}".format(vA))
+    print("vB: {}".format(vB))
 
 if __name__ == '__main__':
     main()

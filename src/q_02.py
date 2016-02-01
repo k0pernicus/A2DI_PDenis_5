@@ -77,6 +77,13 @@ def main():
 
     p_bare = compute_p_bare(P)
 
+    p_bare_bare = compute_p_bare_bare(p_bare)
+    intermed, nb = power_method(p_bare_bare)
+    res = make_proba_vector(intermed)
+    print("alpha = 0.85 | rank = {}".format(res))
+
+    print("------")
+
     for cpt in range(11) :
         alpha = float(cpt) / 10
         p_bare_bare = compute_p_bare_bare(p_bare, alpha=alpha)
