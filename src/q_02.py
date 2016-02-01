@@ -75,12 +75,15 @@ def main():
     W = np.array([[0.,1.,1.],[0.,0.,1.],[0.,1.,0.]])
     P = compute_stochastic_matrix(W)
 
-    print(P)
-
     p_bare = compute_p_bare(P)
-    p_bare_bare = compute_p_bare_bare(p_bare)
 
-    print(power_method(p_bare_bare))
+    for cpt in range(11) :
+        alpha = float(cpt) / 10
+        p_bare_bare = compute_p_bare_bare(p_bare, alpha=alpha)
+        intermed, nb = power_method(p_bare_bare)
+        res = make_proba_vector(intermed)
+
+        print("alpha = {} | rank = {}".format(alpha, res))
 
 if __name__ == '__main__':
     main()
