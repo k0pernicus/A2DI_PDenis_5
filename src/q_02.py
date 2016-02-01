@@ -62,6 +62,15 @@ def compute_p_bare_bare(p_bare, alpha = 0.85):
 
     return np.add(np.dot(alpha, p_bare), np.dot((1 - alpha), np.dot(e, u.T)))
 
+def make_proba_vector(vector):
+    s = sum(vector)
+    res = np.zeros(len(vector))
+
+    for i, val in enumerate(vector):
+        res[i] = val / s
+
+    return res
+
 def main():
     W = np.array([[0.,1.,1.],[0.,0.,1.],[0.,1.,0.]])
     P = compute_stochastic_matrix(W)
