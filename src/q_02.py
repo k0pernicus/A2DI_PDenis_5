@@ -26,9 +26,6 @@ def power_method(p_bare_bare):
     return q_0, iterations
 
 def compute_stochastic_matrix(matrix):
-    """
-
-    """
 
     for i, line in enumerate(matrix):
         s = sum(line)
@@ -54,9 +51,6 @@ def compute_p_bare(p):
     return np.add(p, (np.dot(a, u.T)))
 
 def compute_p_bare_bare(p_bare, alpha = 0.85):
-    """
-    La fonction méchante!
-    """
 
     p_l = len(p_bare)
 
