@@ -55,7 +55,7 @@ def compute_p_bare_bare(p_bare, alpha = 0.85):
     p_l = len(p_bare)
 
     # Calcul de u
-    u = np.array(p_l)
+    u = np.ones(p_l)
     u.fill(1./p_l)
 
     e = np.ones(p_l)
